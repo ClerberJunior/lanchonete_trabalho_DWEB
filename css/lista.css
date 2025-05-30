@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease; /* suaviza troca de tema */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* limite max para telas muito grandes */
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Tema claro */
+body.light-theme {
+    background-color: #f3f3f3;
+    color: #000;
+}
+
+body.light-theme .container {
+    background: white;
+    color: #000;
+}
+
+body.light-theme thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+body.light-theme th,
+body.light-theme td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Tema escuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark-theme .container {
+    background: #1e1e1e;
+    color: #eee;
+}
+
+body.dark-theme thead {
+    background-color: #0056b3;
+    color: #ddd;
+}
+
+body.dark-theme th, 
+body.dark-theme td {
+    border-bottom: 1px solid #444;
+}
+
+/* Hover nas linhas da tabela */
+table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-theme table tbody tr:hover {
+    background-color: rgba(0, 86, 179, 0.2);
+}
+
+.btn {
+    display: inline-block; /* <-- garante que fiquem lado a lado */
+    padding: 6px 12px;
+    margin: 2px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.editar {
+    background-color: #4CAF50; /* verde */
+}
+
+.btn.editar:hover {
+    background-color: #45a049;
+}
+
+.btn.excluir {
+    background-color: #f44336; /* vermelho */
+}
+
+.btn.excluir:hover {
+    background-color: #da190b;
+}

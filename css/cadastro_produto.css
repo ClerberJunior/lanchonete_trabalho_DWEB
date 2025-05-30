@@ -1,0 +1,162 @@
+/* ===== Geral ===== */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Variáveis para tema claro e escuro */
+body.light-theme {
+    --bg-color: #f9f9f9;
+    --text-color: #222;
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --btn-bg: #007bff;
+    --btn-bg-hover: #0056b3;
+    --btn-text-color: #fff;
+    --error-color: #b00020;
+    --success-color: #2e7d32;
+}
+
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --input-bg: #2a2a2a;
+    --input-border: #555;
+    --btn-bg: #64b5f6;
+    --btn-bg-hover: #3a8ee6;
+    --btn-text-color: #121212;
+    --error-color: #cf6679;
+    --success-color: #81c784;
+}
+
+/* Container principal */
+.container {
+    max-width: 600px;
+    margin: 80px auto 40px; /* Top para não ficar atrás do menu fixo */
+    background-color: var(--input-bg);
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* Mensagens de erro e sucesso */
+div[style*="color: red;"] {
+    color: var(--error-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+div[style*="color: green;"] {
+    color: var(--success-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+form#formProduto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cada grupo de campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Inputs */
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1.5px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus {
+    outline: none;
+    border-color: var(--btn-bg);
+    box-shadow: 0 0 6px var(--btn-bg);
+}
+
+/* Botões */
+.form-group.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+button.btn-cadastrar,
+button.btn-limpar {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão cadastrar */
+button.btn-cadastrar {
+    background-color: var(--btn-bg);
+    color: var(--btn-text-color);
+}
+
+button.btn-cadastrar:hover {
+    background-color: var(--btn-bg-hover);
+}
+
+/* Botão limpar */
+button.btn-limpar {
+    background-color: transparent;
+    color: var(--btn-bg);
+    border: 2px solid var(--btn-bg);
+}
+
+button.btn-limpar:hover {
+    background-color: var(--btn-bg);
+    color: var(--btn-text-color);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+        margin: 80px 15px 40px;
+    }
+
+    .form-group.buttons {
+        flex-direction: column;
+    }
+
+    .form-group.buttons button {
+        width: 100%;
+    }
+}

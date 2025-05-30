@@ -1,0 +1,131 @@
+
+/* Barra superior */
+body.light-theme .topbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .topbar {
+    background-color: rgba(18, 18, 18, 0.95);
+    color: #e9e5e5;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Links da topbar */
+body.light-theme .topbar a {
+    color: #000;
+}
+
+body.dark-theme .topbar a {
+    color: #e9e5e5;
+}
+
+body.light-theme #toggle-theme {
+    color: #000;
+}
+
+body.dark-theme #toggle-theme {
+    color: #e9e5e5;
+}
+
+/* Campos (input, textarea, select) - já está ok mas confirmando */
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+    background-color: #2a2a2a;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+/* Botão toggle - fundo transparente, só muda a cor do texto */
+#toggle-theme {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+/* Você pode opcionalmente adicionar hover diferente conforme o tema */
+body.light-theme #toggle-theme:hover {
+    color: #007bff;
+}
+
+body.dark-theme #toggle-theme:hover {
+    color: #64b5f6;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* Remova o background-color e box-shadow daqui */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+
+.topbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.topbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.topbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#toggle-theme {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: auto; /* Garante que fique separado dos itens da esquerda */
+    padding-right: 10px; /* Evita que o botão grude na lateral */
+}
+
+
+.container {
+    padding: 20px;
+    margin-top: 80px; /* espaço suficiente para não cobrir o conteúdo */
+}
+
+/* Para o conteúdo não ficar escondido atrás do topo fixo */
+.main-content {
+    margin-top: 60px; /* evita sobreposição */
+    padding: 20px;
+}
