@@ -1,0 +1,46 @@
+CREATE DATABASE IF NOT EXISTS lanchecleber;
+USE lanchecleber;
+
+-- Tabela de Estados
+CREATE TABLE IF NOT EXISTS estados (
+    sigla CHAR(2) PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL
+);
+
+-- Tabela de Clientes
+CREATE TABLE IF NOT EXISTS clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    endereco TEXT NOT NULL,
+    estado CHAR(2) NOT NULL,
+    data_nasc DATE NOT NULL,
+    sexo VARCHAR(10) NOT NULL,
+    musica BOOLEAN DEFAULT FALSE,
+    cinema BOOLEAN DEFAULT FALSE,
+    informatica BOOLEAN DEFAULT FALSE,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    CONSTRAINT fk_estado FOREIGN KEY (estado) REFERENCES estados(sigla)
+);
+SELECT ativo FROM clientes;
+
+SELECT * FROM clientes WHERE ativo = 0;
+
+INSERT INTO estados (sigla, nome) VALUES
+('BA', 'Bahia'),
+('ES', 'Espírito Santo'),
+('MG', 'Minas Gerais'),
+('RJ', 'Rio de Janeiro'),
+('SP', 'São Paulo');
+
+ALTER TABLE clientes ADD COLUMN ativo TINYINT(1) NOT NULL DEFAULT 1;
+
+-- Script SQL para criar a tabela produtos
+CREATE TABLE IF NOT EXISTS produtos (
+    idProduto INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(100) NOT NULL,
+    preco FLOAT NOT NULL,
+    qtdeEstoque INT NOT NULL,
+    dataValidade DATE NOT NULL
+);
